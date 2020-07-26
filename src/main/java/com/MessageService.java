@@ -1,6 +1,7 @@
 package com;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import java.util.Scanner;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 @RestController
@@ -40,6 +41,31 @@ public class MessageService {
 		return num + " is a Prime Number";
 		else
 		return num + " is not a Prime Number";
+	}
+	@GetMapping("/cube/{m}")
+	public int cube(@PathVariable int m){
+	return m*m*m;
+	}
+	@GetMapping ("/greater/{m}/{n}/{o}") 
+	public String greater(@PathVariable int m, @PathVariable int n, @PathVariable int o){
+    	 if( m >= n && m >= o)
+         return m+" is the largest Number";
+
+      else if (n >= m && n >= o)
+         return n+" is the largest Number";
+
+      else
+          return o+" is the largest Number";
+	}
+	@GetMapping("/area/{m}/{n}")
+        public String area(@PathVariable int m, @PathVariable int n){
+        double area = (m*n)/2;
+        return "Area of Triangle having base"+m+" and width "+n+" is: " + area;
+        }
+	@GetMapping("/name/{m}/{n}")
+	public String surname(@PathVariable String m, @PathVariable String n){
+	return m+" "+ n;
+
 	}
 
 }	

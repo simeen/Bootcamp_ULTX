@@ -23,12 +23,6 @@ public class MessageServiceTest {
 	Assertions.assertEquals(ms.multiply(4,3), "Multiplication of 4 and 3 is 12");
 	}
 	
-	  @Test
-        public void testmultiply() {
-        MessageService ms = new MessageService();
-        Assertions.assertEquals(ms.multiply(5,5), "Multiplication of 5 and 5 is 25");
-        }
-
 	@Test
         public void type() {
         MessageService ms = new MessageService();
@@ -50,4 +44,35 @@ public class MessageServiceTest {
         MessageService ms = new MessageService();
         Assertions.assertEquals(ms.prime(1), "1 is a Prime Number");
         }
+	@Test
+	public void large() {
+	 MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.greater(4,3,1), "4 is the largest Number");
+	}
+        @Test
+        public void larger() {
+         MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.greater(3,4,1), "4 is the largest Number");
+        }
+	@Test
+        public void largest() {
+         MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.greater(1,3,4), "4 is the largest Number");
+        }
+	@Test
+	public void cube(){
+        MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.cube(5), 125);
+        }
+        @Test
+        public void area(){
+        MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.area(5,2), "Area of Triangle having base5 and width 2 is: 5.0");
+        }
+       @Test
+        public void surname(){
+        MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.surname("Enid","Blyton"), "Enid Blyton");
+        }
+
 }
