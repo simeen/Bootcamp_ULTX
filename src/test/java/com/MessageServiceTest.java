@@ -23,6 +23,12 @@ public class MessageServiceTest {
 	Assertions.assertEquals(ms.multiply(4,3), "Multiplication of 4 and 3 is 12");
 	}
 	
+	  @Test
+        public void testmultiply() {
+        MessageService ms = new MessageService();
+        Assertions.assertEquals(ms.multiply(5,5), "Multiplication of 5 and 5 is 25");
+        }
+
 	@Test
         public void type() {
         MessageService ms = new MessageService();
